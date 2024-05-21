@@ -27,7 +27,7 @@ const SelectGroupOne: React.FC = () => {
           }`}
         >
           <option value="" disabled className="text-body dark:text-bodydark">
-            Select your subject
+            Selecione a categoria
           </option>
           <option value="USA" className="text-body dark:text-bodydark">
             USA

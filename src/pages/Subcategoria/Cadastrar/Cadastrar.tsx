@@ -13,7 +13,7 @@ import DatePickerOne from '../../../components/Forms/DatePicker/DatePickerOne';
 import DatePickerTwo from '../../../components/Forms/DatePicker/DatePickerTwo';
 import SelectGroupTwo from '../../../components/Forms/SelectGroup/SelectGroupTwo';
 import MultiSelect from '../../../components/Forms/MultiSelect';
-import SelectGroupOne from '../../../components/Forms/SelectGroup/SelectGroupOne';
+import SelectGroupOne from '../../../components/Forms/SelectGroup/SelectModelos';
 
 const AddSubcategoria = () => {
   return (

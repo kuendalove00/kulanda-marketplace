@@ -7,36 +7,13 @@ import ProductFour from '../../images/product/product-04.png';
 const productData: Product[] = [
   {
     image: ProductOne,
-    name: 'Apple Watch Series 7',
-    category: 'Electronics',
-    price: 296,
-    sold: 22,
-    profit: 45,
+    name: 'XPTO',
+    category: 'Sediangani Sofrimento',
+    price: 'sedi@gmail.com',
+    sold: '999565456',
+    profit: 'qualquer',
   },
-  {
-    image: ProductTwo,
-    name: 'Macbook Pro M1',
-    category: 'Electronics',
-    price: 546,
-    sold: 12,
-    profit: 125,
-  },
-  {
-    image: ProductThree,
-    name: 'Dell Inspiron 15',
-    category: 'Electronics',
-    price: 443,
-    sold: 64,
-    profit: 247,
-  },
-  {
-    image: ProductFour,
-    name: 'HP Probook 450',
-    category: 'Electronics',
-    price: 499,
-    sold: 72,
-    profit: 103,
-  },
+
 ];
 
 const TableTwo = () => {

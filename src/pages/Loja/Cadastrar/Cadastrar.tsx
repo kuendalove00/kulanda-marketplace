@@ -15,6 +15,9 @@ import SelectGroupTwo from '../../../components/Forms/SelectGroup/SelectGroupTwo
 import MultiSelect from '../../../components/Forms/MultiSelect';
 
 const AddLoja = () => {
+
+  use
+
   return (
     <DefaultLayout>
       <Breadcrumb pageName="Lojas" />
