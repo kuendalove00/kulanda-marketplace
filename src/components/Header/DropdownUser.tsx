@@ -45,13 +45,13 @@ const DropdownUser = () => {
       >
         <span className="hidden text-right lg:block">
           <span className="block text-sm font-medium text-black dark:text-white">
-            Rui Malemba
+            {localStorage.getItem("nome")}
           </span>
           <span className="block text-xs">Administrador</span>
         </span>
 
         <span className="h-12 w-12 rounded-full">
-          <img src={UserOne} className='rounded rounded-full' alt="User" />
+          <img src={""} className='rounded rounded-full' alt="User" />
         </span>
 
         <svg
@@ -107,7 +107,7 @@ const DropdownUser = () => {
             </Link>
           </li>
         </ul>
-        <button className="flex items-center gap-3.5 px-6 py-4 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
+        <a href='/' className="flex items-center gap-3.5 px-6 py-4 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
           <svg
             className="fill-current"
             width="22"
@@ -126,7 +126,7 @@ const DropdownUser = () => {
             />
           </svg>
           Sair
-        </button>
+        </a>
       </div>
       {/* <!-- Dropdown End --> */}
     </div>

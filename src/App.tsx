@@ -16,11 +16,19 @@ import AddMarca from './pages/Marca/Cadastrar/Cadastrar';
 import ListMarca from './pages/Marca/Listar/Listar';
 import AddModelo from './pages/Modelo/Cadastrar/Cadastrar';
 import ListModelo from './pages/Modelo/Listar/Listar';
+import ListConta from './pages/Conta/Listar/Listar';
+import AddProduto from './pages/Produto/Cadastrar/Cadastrar';
+import ListProduto from './pages/Produto/Listar/Listar';
+
+
 import Profile from './pages/Profile';
 import Settings from './pages/Settings';
+
 import Tables from './pages/Tables';
 import Alerts from './pages/UiElements/Alerts';
 import Buttons from './pages/UiElements/Buttons';
+import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -54,6 +62,33 @@ function App() {
             <>
               <PageTitle title="Contas | Kulanda" />
               <Profile />
+            </>
+          }
+        />
+        <Route
+          path="/produtos/cadastrar"
+          element={
+            <>
+              <PageTitle title="Lojas | Kulanda" />
+              <AddProduto />
+            </>
+          }
+        />
+        <Route
+          path="/produtos/listar"
+          element={
+            <>
+              <PageTitle title="Lojas | Kulanda" />
+              <ListProduto />
+            </>
+          }
+        />
+        <Route
+          path="/contas"
+          element={
+            <>
+              <PageTitle title="Contas | Kulanda" />
+              <ListConta />
             </>
           }
         />
@@ -175,6 +210,19 @@ function App() {
           }
         />
       </Routes>
+
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </>
   );
 }

@@ -1,13 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useForm } from '../../hooks/form'
 import Breadcrumb from '../../components/Breadcrumbs/Breadcrumb';
 import LogoDark from '../../images/logo/logo-dark.svg';
 import Logo from '../../images/logo/logo.svg';
 import DefaultLayout from '../../layout/DefaultLayout';
+import { useSignIn } from './state';
 
 const SignUp: React.FC = () => {
+  
+  const { handleSave, register, handleSubmit } = useSignIn();
+  
   return (
-    
 
       <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
         <div className="flex flex-wrap items-center">
@@ -153,7 +157,7 @@ const SignUp: React.FC = () => {
                 Criar Conta
               </h2>
 
-              <form>
+              <form onSubmit={handleSubmit(handleSave)}>
                 <div className="mb-4">
                 <div className="mb-4.5 flex flex-col gap-6 xl:flex-row">
                   <div className="w-full xl:w-1/2">
@@ -161,6 +165,8 @@ const SignUp: React.FC = () => {
                       Primeiro Nome
                     </label>
                     <input
+                      
+                      {...register('fname')}
                       type="text"
                       placeholder=""
                       className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
@@ -172,6 +178,7 @@ const SignUp: React.FC = () => {
                       Último Nome
                     </label>
                     <input
+                      {...register('lname')}
                       type="text"
                       placeholder=""
                       className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
@@ -187,6 +194,7 @@ const SignUp: React.FC = () => {
                   </label>
                   <div className="relative">
                     <input
+                    {...register('email')}
                       type="email"
                       placeholder=""
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
@@ -218,6 +226,7 @@ const SignUp: React.FC = () => {
                   </label>
                   <div className="relative">
                     <input
+                    {...register('password')}
                       type="password"
                       placeholder=""
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
@@ -253,6 +262,7 @@ const SignUp: React.FC = () => {
                   </label>
                   <div className="relative">
                     <input
+                    {...register('confirmPassword')}
                       type="password"
                       placeholder=""
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
@@ -284,7 +294,7 @@ const SignUp: React.FC = () => {
 
                 <div className="mb-5">
                   <input
-                    type="submit"
+                    type='submit'
                     value="Criar Conta"
                     className="w-full cursor-pointer rounded-lg border border-primary bg-primary p-4 text-white transition hover:bg-opacity-90"
                   />

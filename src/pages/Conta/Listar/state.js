@@ -1,13 +1,11 @@
 import { service } from '../../../../services';
 import { appMessages } from '../../../../utils/messages';
 import { responseStatus } from '../../../../utils/responseStatus';
-import { useApp } from '../../../app';
 import React, {useState, useEffect} from 'react';
 import {toast} from "react-toastify";
 
 
-export const useListSubcategory = () => {
-    const { AppRouteName, navigate, navigateGoBack } = useApp();
+export const useListCategory = () => {
 
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -16,7 +14,7 @@ export const useListSubcategory = () => {
 
     const getInitialData = async () => {
         setIsLoading(true);
-        const response = await service.subcategory.getAll();
+        const response = await service.category.getAll();
         setIsLoading(false);
     
         if (response?.status === responseStatus.OK) {
@@ -31,7 +29,7 @@ export const useListSubcategory = () => {
       const handleDelete = async () => {
         setIsLoading(true);
     
-        const response = await service.subcategory.remove(deleteItem?.id);
+        const response = await service.category.remove(deleteItem?.id);
     
         if (response?.status === responseStatus.OK) {
           toast.success(`Categoria ${deleteItem?.name} removido com sucesso!`);
@@ -45,9 +43,9 @@ export const useListSubcategory = () => {
         setIsLoading(false);
       };
     
-      const handleUpdate = (subcategory) => {
-        navigate(AppRouteName.subcategory.edit, {
-          state: { subcategory, isUpdate: true },
+      const handleUpdate = (category) => {
+        navigate(AppRouteName.category.edit, {
+          state: { category, isUpdate: true },
         });
       };
 
@@ -59,18 +57,13 @@ export const useListSubcategory = () => {
         if (deleteItem?.id) handleDelete();
       }, [deleteItem]);
 
-      
-
       return {
         data,
         deleteItem,
         setDeleteItem,
         isLoading,
         totalData,
-        AppRouteName,
         handleUpdate,
         handleDelete,
-        navigate,
-        navigateGoBack,
       };
 }

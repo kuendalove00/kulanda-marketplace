@@ -3,7 +3,7 @@ import { axiosInstance } from "../../apis/axios";
 
 async function login(data={}) {
   try {
-    const response = await axiosInstance.post("/logar", data);
+    const response = await axiosInstance.post("/user/login", data);
 
     return response;
 
@@ -21,7 +21,7 @@ async function login(data={}) {
 
 async function registar(data = {}) {
   try {
-    const response = await axiosInstance.post("utilizador/", data);
+    const response = await axiosInstance.post("user/", data);
 
     return response;
   } catch (error) {

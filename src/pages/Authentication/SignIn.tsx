@@ -4,8 +4,12 @@ import Breadcrumb from '../../components/Breadcrumbs/Breadcrumb';
 import LogoDark from '../../images/logo/logo-dark.svg';
 import Logo from '../../images/logo/logo.svg';
 import DefaultLayout from '../../layout/DefaultLayout';
+import { useSignIn } from './state';
 
 const SignIn: React.FC = () => {
+
+  const { handleSave, register, handleSubmit, handleLogin } = useSignIn();
+
   return (
       <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
         <div className="flex flex-wrap items-center">
@@ -152,13 +156,14 @@ const SignIn: React.FC = () => {
                 Login
               </h2>
 
-              <form>
+              <form onSubmit={handleSubmit(handleLogin)}>
                 <div className="mb-4">
                   <label className="mb-2.5 block font-medium text-black dark:text-white">
                     Email
                   </label>
                   <div className="relative">
                     <input
+                    {...register('email')}
                       type="email"
                       placeholder="Enter your email"
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
@@ -190,6 +195,7 @@ const SignIn: React.FC = () => {
                   </label>
                   <div className="relative">
                     <input
+                    {...register('password')}
                       type="password"
                       placeholder=""
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
@@ -222,7 +228,8 @@ const SignIn: React.FC = () => {
                 <div className="mb-5">
                  
                   <input
-                    onClick={ ()  => window.open("/dashboard")}
+                    //onClick={ ()  => window.open("/dashboard")}
+                    type='submit'
                     value="Entrar"
                     className="w-full cursor-pointer rounded-lg border border-primary bg-primary p-4 text-white transition hover:bg-opacity-90"
                   />
