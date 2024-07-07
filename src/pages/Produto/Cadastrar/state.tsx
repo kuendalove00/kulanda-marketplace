@@ -6,7 +6,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useForm } from 'react-hook-form';
 
-export const useSignIn = () => {
+export const useAddProduto = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -16,7 +16,10 @@ export const useSignIn = () => {
     const handleSave = async (data: any) => {
         //if (!isValidForm(formData)) return;
         let response = await service.category.add({
-            name: data.name,
+            nome: data.name,
+            descricao: data.descricao,
+            categoria: data.categoria,
+            foto: "Não tem ainda"
         });
 
         if (response?.status === responseStatus.CREATED) {

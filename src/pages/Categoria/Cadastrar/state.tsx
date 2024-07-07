@@ -6,11 +6,10 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useForm } from 'react-hook-form';
 
-export const useSignIn = () => {
+export const useAddCategoria = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
-    const from = location.state?.from?.pathname || "/";
     const { register, handleSubmit, setError, resetField } = useForm();
 
     const handleSave = async (data: any) => {

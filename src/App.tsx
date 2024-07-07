@@ -20,6 +20,8 @@ import ListConta from './pages/Conta/Listar/Listar';
 import AddProduto from './pages/Produto/Cadastrar/Cadastrar';
 import ListProduto from './pages/Produto/Listar/Listar';
 
+import Home from './components/website/Home';
+
 
 import Profile from './pages/Profile';
 import Settings from './pages/Settings';
@@ -62,6 +64,24 @@ function App() {
             <>
               <PageTitle title="Contas | Kulanda" />
               <Profile />
+            </>
+          }
+        />
+        <Route
+          path="/kulanda/inicio"
+          element={
+            <>
+              <Home />
+          
+            </>
+          }
+        />
+        <Route
+          path="/lojas/:id"
+          element={
+            <>
+              <Home />
+          
             </>
           }
         />

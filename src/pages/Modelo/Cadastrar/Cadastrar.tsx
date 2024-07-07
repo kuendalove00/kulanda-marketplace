@@ -14,15 +14,20 @@ import DatePickerTwo from '../../../components/Forms/DatePicker/DatePickerTwo';
 import SelectGroupTwo from '../../../components/Forms/SelectGroup/SelectGroupTwo';
 import MultiSelect from '../../../components/Forms/MultiSelect';
 import SelectGroupOne from '../../../components/Forms/SelectGroup/SelectModelos';
+import { useAddModelo } from './state';
 
 const AddModelo = () => {
+
+  const { handleSave, register, handleSubmit } = useAddModelo();
+
   return (
     <DefaultLayout>
-      <Breadcrumb pageName="Lojas" />
+      <Breadcrumb pageName="Modelas" />
 
       <div className="grid grid-cols-1 gap-9 ">
         <div className="flex flex-col gap-9">
           {/* <!-- Input Fields --> */}
+          <form onSubmit={handleSubmit(handleSave)}>
           <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
             <div className="border-b border-stroke py-4 px-6.5 dark:border-strokedark">
               <h3 className="font-medium text-black dark:text-white">
@@ -52,6 +57,8 @@ const AddModelo = () => {
              
             </div>
           </div>
+          </form>
+          
 
           
       </div>
